@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>ApBlog</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'estilos.css' %}"
+</head>
+<body>
+    <h1>Bienvenido al blogap, donde veras como reseño a videjuegos</h1>
+    <section>
+        {% for elemento in blogap %}
+            <article>
+                <h3>{{ elemento.nombre  }}</h3>
+                <p>
+                    {{ elemento.contenido }}
+                </p>
+                <img src="{{  elemento.imagen }}">
+                <footer>
+                    autor: {{ elemento.autor }}
+                </footer>
+            </article>
+        {% endfor %}
+
+    </section>
+</body>
+</html>
